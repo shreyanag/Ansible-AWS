@@ -4,7 +4,7 @@ Creation of ec2 instance using ansible YAML scripts
 pre requisite install ansible,python,boto,boto3 
 
 #####create ansible user and add it in /etc/sudoers
-#####MAke password authention as yes in /etc/sshd/ssh_config file and then restart service sshd restart
+#####MAke password authention as yes in /etc/ssh/sshd_config file and then restart service sshd restart
 ####
 Create the Ansible directory structure mkdir -p AWS_Ansible/group_vars/all/ cd AWS_Ansible touch playbook.yml
 
