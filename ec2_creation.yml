@@ -42,7 +42,7 @@
     -
       ec2_vpc_igw:
         vpc_id: "{{ ec2_vpc_net_result.vpc.id }}"
-        region: us-east-1
+        region: "{{ region }}"
         aws_access_key: "{{ ec2_access_key }}"
         aws_secret_key: "{{ ec2_secret_key }}"
         state: "present"
@@ -90,7 +90,7 @@
       register: ec2_key_result
 
     - name: Save private key
-      copy: content="{{ ec2_key_result.key.private_key }}" dest="/home/ansible/AWS_Ansible/test-key.pem" mode=0600
+      copy: content="{{ ec2_key_result.key.private_key }}" dest="/home/ansible/Ansible-AWS/test-key.pem" mode=0600
       when: ec2_key_result.changed
     -
       ec2:
